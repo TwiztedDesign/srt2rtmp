@@ -1,0 +1,15 @@
+sudo: required
+language: generic
+services:
+  - docker
+deploy:
+  provider: elasticbeanstalk
+  region: "us-west-2"
+  app: "srt2rtmp"
+  env: "srt2rtmp-env"
+  bucket_name: "elasticbeanstalk-us-west-2-730376649188"
+  bucket_path: "srt2rtmp"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
